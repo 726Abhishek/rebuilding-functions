@@ -1,0 +1,26 @@
+new_arr = []
+for i in range(int(input())):
+    name = input()
+    score = float(input())
+    new_arr.append([score,name])
+n = len(new_arr)
+
+new_arr.sort()
+print(new_arr)
+
+min = new_arr[0][0]
+new_arr.remove(new_arr[0])
+print(new_arr)
+
+while new_arr[0][0] == min:
+    new_arr.remove(new_arr[0])
+    print(new_arr)
+
+sec_min = new_arr[0][0]
+result = []
+for i in range(len(new_arr)):
+    if sec_min == new_arr[i][0]:
+        result.append(new_arr[i][1])
+result.sort()
+for i in range(len(result)):
+    print(result[i])
